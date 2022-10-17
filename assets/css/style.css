@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'Glitch';
+    src: url('../fonts/doctor_glitch.otf');
+}
+
+
+:root{
+    --bg: rgb(10, 10, 10);
+    --black: rgba(5, 5, 5, 0.411);
+    --logo: rgb(15, 15, 15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    align-items: center;
+    background-color: var(--bg);
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    color: red;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+form,
+section {
+    padding: 1.5rem 2rem;
+
+}
+
+form {
+    background-color: rgb(20, 20, 20);
+}
+
+p {
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    filter: drop-shadow(1px 1px 3px red);
+}
+
+main {
+    display: flex;
+    margin: 0 auto;
+    background-color: var(--bg);
+    min-height: 100vh;
+    color: white;
+}
+
+label {
+    display: block;
+    text-transform: uppercase;
+    position: absolute;
+    color: red;
+    left: 10px;
+    top: 5px;
+    font-size: 10px;
+    transform: translateY(-150%);
+    letter-spacing: .1rem;
+}
+
+.content-wrapper {
+    padding: 0rem;
+}
+
+.art-container {
+    width: 75%;
+    background: url('../images/person.jpg');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-container {
+    width: 50px;
+}
+
+.company {
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    background-color: var(--black);
+    font-size: clamp(1rem, 1.5vmax, 10vh);
+    letter-spacing: .5rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 5px red;
+}
+
+.input-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+}
+
+.input-wrapper p{
+    margin: 1rem 0;
+    width: 35%;
+}
+
+input,
+label {
+    font-family: 'Inter';
+}
+
+input {
+    padding: 1.5rem 1rem .5rem .5rem;
+    background-color: rgb(14, 12, 12);
+    border-radius: 3px;
+    border: 1px solid black;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    background-color: var(--logo);
+    border: 1px solid rgb(48, 48, 48);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+input:not(:placeholder-shown) + label,
+input:focus + label {
+    transform: translateY(0);
+    transition: all .5s;
+}
+
+button { 
+    background-color: var(--bg);
+    color: red;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    border: 1px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    background-color: red;
+    color: var(--bg);
+}
+
+@media screen and (max-width: 900px){
+    .company{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 845px) {
+    .input-wrapper {
+        flex-direction: column;
+    }
+
+    .input-wrapper p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    main {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    h1,
+    h2 {
+        margin: 1.5rem 0;
+    }
+
+    .company {
+        flex-direction: row;
+    }
+
+    .company p {
+        display: block;
+        font-size: 1.5rem;
+        padding: 10rem 0;
+    }
+
+    .art-container {
+        width: 100%;
+        overflow: visible;
+        padding: 0;
+        
+    }
+
+    .company {
+        position: static;
+        padding: 0;
+        transform: translateY(0);
+    }
+}

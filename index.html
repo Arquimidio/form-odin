@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <main>
+        <section class="art-container">
+            <div class="company">
+                <div class="logo-container">
+                    <img src="./assets/images/cube.svg" alt="">
+                </div>
+                <p>Metaverse</p>
+            </div>
+        </section>
+        <section class="content-wrapper">
+            <section>
+                <h1>You know you need something like this in your life to help you realize your deepest dreams! Sign up now to get started.</h1>
+                <h2>Be anyone, at anytime</h2>
+            </section>
+            <form action="/" method="POST" id="signup_metaverse">
+                <h2>Let's do this!</h2>
+                <div class="input-wrapper">
+                    <p>
+                        <input 
+                            id="first_name" 
+                            name="first_name" 
+                            type="text"
+                            placeholder="First name"
+                            minlength="3"
+                            required
+                        >
+                        <label for="first_name">First name</label>
+                    </p>
+                    <p>
+                        <input 
+                            id="last_name" 
+                            name="last_name" 
+                            type="text"
+                            placeholder="Last name"
+                        >
+                        <label for="last_name">Last name</label>
+                    </p>
+                    <p>
+                        <input 
+                            id="email" 
+                            name="email" 
+                            type="email"
+                            placeholder="Email"
+                            required
+                        >
+                        <label for="email">Email</label>
+                    </p>
+                    <p>
+                        <input 
+                            id="phone" 
+                            name="telephone" 
+                            type="tel"
+                            placeholder="Phone"
+                            required
+                        >
+                        <label for="phone">Phone Number</label>
+                    </p>
+                    <p>
+                        <input 
+                            id="pwd" 
+                            name="password" 
+                            type="password"
+                            placeholder="Password"
+                            required
+                        >
+                        <label for="pwd">password</label>
+                    </p>
+                    <p>
+                        <input 
+                            id="pwd_confirmation" 
+                            name="confirmed_password" 
+                            type="password"
+                            placeholder="Confirm password"
+                            required
+                        >
+                        <label for="pwd_confirmation">Confirm password</label>
+                    </p>
+                </div>
+            </form>
+            <section>
+                <button form="signup_metaverse" type="submit">Create account</button>
+                <p>
+                    <span>Already have an account?</span>
+                    <a href="/">Log in</a>
+                </p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
