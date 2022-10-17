@@ -8,12 +8,16 @@
     --bg: rgb(10, 10, 10);
     --black: rgba(5, 5, 5, 0.411);
     --logo: rgb(15, 15, 15);
+    --light-border: rgb(48, 48, 48);
+    --form: rgb(30, 30, 30);
+    --meta-red: red;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.5;
 }
 
 body{
@@ -24,16 +28,17 @@ body{
 }
 
 a {
-    color: red;
+    color: var(--meta-red);
 }
 
 h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 form,
@@ -43,7 +48,9 @@ section {
 }
 
 form {
-    background-color: rgb(20, 20, 20);
+    background-color: var(--form);
+    border-bottom: 2px solid var(--light-border);
+    border-top: 2px solid var(--light-border);
 }
 
 p {
@@ -53,7 +60,7 @@ p {
 
 img {
     max-width: 100%;
-    filter: drop-shadow(1px 1px 3px red);
+    filter: drop-shadow(1px 1px 3px var(--meta-red));
 }
 
 main {
@@ -68,11 +75,11 @@ label {
     display: block;
     text-transform: uppercase;
     position: absolute;
-    color: red;
+    color: var(--meta-red);
     left: 10px;
     top: 5px;
     font-size: 10px;
-    transform: translateY(-150%);
+    /*transform: translateY(-150%);*/
     letter-spacing: .1rem;
 }
 
@@ -93,24 +100,22 @@ label {
 }
 
 .company {
+    width: fit-content;
     text-transform: uppercase;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    text-align: center;
-    padding: 2rem;
     color: white;
     background-color: var(--black);
-    font-size: clamp(1rem, 1.5vmax, 10vh);
+    font-size: 1rem;
     letter-spacing: .5rem;
     color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 5px red;
+    text-shadow: 1px 1px 5px var(--meta-red);
+}
+
+.company--mobile {
+    display: none;
 }
 
 .input-wrapper{
@@ -120,8 +125,8 @@ label {
 }
 
 .input-wrapper p{
-    margin: 1rem 0;
-    width: 35%;
+    margin: 0;
+    width: 40%;
 }
 
 input,
@@ -137,6 +142,22 @@ input {
     color: white;
     width: 100%;
     font-size: 1rem;
+}
+
+input ~ .status {
+    display: block;
+    margin: .5rem 0;
+    height: 1em;
+}
+
+input:not(:placeholder-shown, :focus):invalid {
+    border: 1px solid var(--meta-red);
+}
+
+
+input:not(:placeholder-shown, :focus):invalid ~ .status::before{
+    content: "⚠ Invalid format";
+    color: red;
 }
 
 input:focus {
@@ -155,19 +176,25 @@ input:focus + label {
     transition: all .5s;
 }
 
+.submit-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 button { 
     background-color: var(--bg);
-    color: red;
+    color: var(--meta-red);
     padding: .5rem 1rem;
-    font-size: 1.5rem;
-    border: 1px solid red;
+    font-size: 1.3rem;
+    border: 1px solid var(--meta-red);
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 1rem;
 }
 
 button:hover {
-    background-color: red;
+    background-color: var(--meta-red);
     color: var(--bg);
 }
 
@@ -201,12 +228,24 @@ button:hover {
 
     .company {
         flex-direction: row;
+        position: static;
+        padding: 0;
+        transform: translateY(0);
+    }
+
+    .company--mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        bottom: 0;
+        gap: 0;
+        padding: 10rem 0;
     }
 
     .company p {
         display: block;
         font-size: 1.5rem;
-        padding: 10rem 0;
+        padding: 0;
     }
 
     .art-container {
@@ -216,9 +255,18 @@ button:hover {
         
     }
 
-    .company {
-        position: static;
-        padding: 0;
-        transform: translateY(0);
+    .submit-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .submit-wrapper,
+    button {
+        width: 100%;
+    }
+
+    .submit-wrapper {
+        text-align: center;
     }
 }
