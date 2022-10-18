@@ -32,12 +32,12 @@ a {
 }
 
 h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
@@ -79,7 +79,6 @@ label {
     left: 10px;
     top: 5px;
     font-size: 10px;
-    /*transform: translateY(-150%);*/
     letter-spacing: .1rem;
 }
 
@@ -143,11 +142,16 @@ input {
     font-size: 1rem;
 }
 
+input::placeholder {
+    opacity: .6;
+}
+
 input ~ .status {
     display: block;
     margin: .5rem 0;
-    height: 1em;
-    visibility: hidden;
+    font-size: .8rem;
+    height: 1.2em;
+    color: var(--meta-red);
 }
 
 input:not(:placeholder-shown, :focus):invalid {
@@ -192,6 +196,10 @@ button:hover {
     color: var(--bg);
 }
 
+button:active {
+    transform: scale(.98);
+}
+
 @media screen and (max-width: 900px){
     .company{
         flex-direction: column;
@@ -224,7 +232,6 @@ button:hover {
         flex-direction: row;
         position: static;
         padding: 0;
-        transform: translateY(0);
     }
 
     .company--mobile {
@@ -234,6 +241,7 @@ button:hover {
         bottom: 0;
         gap: 0;
         padding: 10rem 0;
+        background-color: var(--black);
     }
 
     .company p {

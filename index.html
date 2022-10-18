@@ -38,7 +38,7 @@
                             required
                         >
                         <label for="first_name">First name</label>
-                        <span class="status"></span>
+                        <span id="first_name--display" class="status"></span>
                     </p>
                     <p>
                         <input 
@@ -47,9 +47,10 @@
                             type="text"
                             placeholder="Snow"
                             autocomplete="family-name"
+                            minlength="3"
                         >
                         <label for="last_name">Last name</label>
-                        <span class="status"></span>
+                        <span id="last_name--display" class="status"></span>
                     </p>
                     <p>
                         <input 
@@ -61,7 +62,7 @@
                             required
                         >
                         <label for="email">Email</label>
-                        <span class="status"></span>
+                        <span id="email--display" class="status"></span>
                     </p>
                     <p>
                         <input 
@@ -95,7 +96,7 @@
                             required
                         >
                         <label for="pwd_confirmation">Confirm password</label>
-                        <span class="status"></span>
+                        <span id="confirmation_status" class="status"></span>
                     </p>
                 </div>
             </form>
@@ -116,6 +117,8 @@
             </section>
         </section>
     </main>
+    <script src="./assets/js/validator.js"></script>
     <script src="./assets/js/passwordValidation.js"></script>
+    <script src="./assets/js/generalValidation.js"></script>
 </body>
 </html>
