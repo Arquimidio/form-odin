@@ -107,7 +107,6 @@ label {
     align-items: center;
     gap: 1rem;
     color: white;
-    background-color: var(--black);
     font-size: 1rem;
     letter-spacing: .5rem;
     color: rgb(255, 255, 255);
@@ -148,16 +147,11 @@ input ~ .status {
     display: block;
     margin: .5rem 0;
     height: 1em;
+    visibility: hidden;
 }
 
 input:not(:placeholder-shown, :focus):invalid {
     border: 1px solid var(--meta-red);
-}
-
-
-input:not(:placeholder-shown, :focus):invalid ~ .status::before{
-    content: "⚠ Invalid format";
-    color: red;
 }
 
 input:focus {
